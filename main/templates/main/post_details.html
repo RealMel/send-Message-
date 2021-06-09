@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+    <p>{{ post.title }}</p>
+    <p> {{ post.text }} </p>
+        {% if post.image  %}
+    <img scr="{{ post.image.url }}">
+    {% endif %}
+    <p>{{ post.pub_date }}</p>
+    <p>
+      {% for tag in post.tags.all %}
+      <span> {{ tag.title }}</span>
+      {% endfor %}
+    </p>
+{% endblock body%}
